@@ -78,3 +78,12 @@ class UserDetailView(DetailView):
 	model = UserProfile
 	template_name = 'users/detail.html'
 
+
+class UserDeleteView(DeleteView):
+	"""
+	View to delete user
+	"""
+	model = UserProfile
+	template_name = 'users/delete.html'
+	success_url = reverse_lazy('users:list')
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}User Delete{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+		<form method="POST" action=".">
+			{% csrf_token %}
+			<p>Are you sure to delete user - {{ object.user.username }}</p>
+			<button type="submit" class="btn btn-danger">Confirm</button>
+			<a href="{% url 'users:list' %}" class="btn btn-default">Go to User List</a>
+		</form>
+	</div>
+</div>
+{% endblock %}

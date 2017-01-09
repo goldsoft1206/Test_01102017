@@ -20,7 +20,10 @@
 					<td><a href="{% url 'users:detail' pk=object.pk %}">{{ object.user.username }}</a></td>
 					<td>{{ object.birth_date }}</td>
 					<td>{{ object.random_number }}</td>
-					<th><a href="{% url 'users:update' pk=object.pk %}" class="btn-xs">Edit</a>
+					<td>
+						<a href="{% url 'users:update' pk=object.pk %}" class="btn-xs btn-success">Edit</a>
+						<a href="{% url 'users:delete' pk=object.pk %}" class="btn-xs btn-danger">Delete</a>
+					</td>
 				</tr>
 				{% endfor %}
 			</tbody>
