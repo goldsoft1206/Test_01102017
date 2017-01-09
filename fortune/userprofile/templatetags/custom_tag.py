@@ -28,9 +28,9 @@ def get_bizzfuzz(profile):
     if profile.random_number % 3 == 0 and profile.random_number % 5 == 0:
         return "BizzFuzz"
     elif profile.random_number % 3 == 0:
-        return "Fuzz"
-    elif profile.random_number % 5 == 0:
         return "Bizz"
+    elif profile.random_number % 5 == 0:
+        return "Fuzz"
     else:
         return profile.random_number
 
