@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd party apps
+    'crispy_forms',
+
     # self developed apps
     'userprofile',
 ]
@@ -123,3 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+

@@ -3,5 +3,12 @@
 {% block title %}User List{% endblock %}
 
 {% block content %}
-<p>List View</p>
+<div class="row">
+	<div class="col-md-12">
+		<p>List View</p>
+	</div>
+	<div class="col-md-12">
+		<a href="{% url 'users:create' %}" class="btn btn-default">Create</a>
+	</div>
+</div>
 {% endblock %}
