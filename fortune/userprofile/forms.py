@@ -30,7 +30,7 @@ class UserForm(forms.ModelForm):
 
 	def clean_username(self):
 		# check if new username is same as old one (for update of instance)
-		if self.cleaned_data['username'] == self.initial['username']:
+		if self.cleaned_data['username'] == self.initial.get('username', None):
 			return self.cleaned_data['username']
 
 		# check if username is used or not
