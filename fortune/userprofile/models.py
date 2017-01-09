@@ -13,5 +13,5 @@ class UserProfile(models.Model):
 	birth_date = models.DateField()
 
 	# random number should be range(1, 100)
-	randome_number = models.PositiveSmallIntegerField(default=1)
+	random_number = models.PositiveSmallIntegerField(default=1)
 
