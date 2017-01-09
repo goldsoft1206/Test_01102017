@@ -1,7 +1,7 @@
 import random
 
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse_lazy
@@ -69,3 +69,12 @@ class UserUpdateView(UpdateView):
 		init_value = super(UserUpdateView, self).get_initial()
 		init_value['username'] = self.object.user.username
 		return init_value
+
+
+class UserDetailView(DetailView):
+	"""
+	View to show detailed info of User
+	"""
+	model = UserProfile
+	template_name = 'users/detail.html'
+

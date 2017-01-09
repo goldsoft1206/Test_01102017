@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}User Detail{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-bordered">
+			<tbody>
+				<tr>
+					<td>Username</td>
+					<td>{{ object.user.username }}</td>
+				</tr>
+				<tr>
+					<td>Birthday</td>
+					<td>{{ object.birth_date }}</td>
+				</tr>
+				<tr>
+					<td>Random Number</td>
+					<td>{{ object.random_number }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-12">
+		<a href="{% url 'users:list' %}" class="btn btn-default">Back to User List</a>
+	</div>
+</div>
+{% endblock %}
