@@ -29,6 +29,10 @@ class UserForm(forms.ModelForm):
 		self.helper.add_input(Submit('submit', 'Submit'))
 
 	def clean_username(self):
+		# check if new username is same as old one (for update of instance)
+		if self.cleaned_data['username'] == self.initial['username']:
+			return self.cleaned_data['username']
+
 		# check if username is used or not
 		try:
 			existing_user = User.objects.get(username=self.cleaned_data['username'])

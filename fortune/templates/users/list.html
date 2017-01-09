@@ -11,6 +11,7 @@
 					<th>Username</th>
 					<th>Birthday</th>
 					<th>Random Number</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -19,6 +20,7 @@
 					<td>{{ object.user.username }}</td>
 					<td>{{ object.birth_date }}</td>
 					<td>{{ object.random_number }}</td>
+					<th><a href="{% url 'users:update' pk=object.pk %}" class="btn-xs">Edit</a>
 				</tr>
 				{% endfor %}
 			</tbody>

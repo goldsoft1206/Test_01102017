@@ -43,3 +43,29 @@ class UserCreateView(CreateView):
 		profile.save()
 
 		return HttpResponseRedirect(self.get_success_url())
+
+
+class UserUpdateView(UpdateView):
+	"""
+	View to modify a user
+	"""
+	model = UserProfile
+	form_class = UserForm
+	template_name = 'users/update.html'
+
+	def get_success_url(self):
+		return reverse_lazy('users:list')
+
+	def form_valid(self, form):
+		# update username
+		self.object.user.username = form.cleaned_data['username']
+		# update birth_date
+		self.object.birth_date = form.cleaned_data['birth_date']
+		self.object.user.save()
+		self.object.save()
+		return HttpResponseRedirect(self.get_success_url())
+
+	def get_initial(self):
+		init_value = super(UserUpdateView, self).get_initial()
+		init_value['username'] = self.object.user.username
+		return init_value
